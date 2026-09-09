@@ -1,0 +1,64 @@
+---
+title: "title"
+subtittle: "subtitle" 
+date: "`r format(Sys.Date(), '%d %B %Y')`"
+author: author 
+bibliography: /Users/moi/zotero/exportdb/MyLibrary.bib 
+number-sections: true
+toc: true
+toc-depth: 3
+toc-expand: 3
+format:
+  html:
+    html-math-method: katex
+    css: styles.css
+    code-fold: true
+execute:
+    warning: false
+---
+
+# Framework 
+
+Analyses and results in a reproducible format (code and output) following
+reproducible framework [@powers2019].
+
+
+
+```{r renderstuff,eval=F,include=F}
+#| cache: true
+#| echo: false
+#|
+quarto::quarto_render("report.qmd")
+```
+
+
+```{r libraryandco,eval=T,include=T}
+#|
+library(readxl)
+require(openxlsx)
+library(here)
+library(dplyr)
+library(ggplot2)
+library(arrow)
+library(data.table)
+library(tictoc)
+library(knitr)
+library(kableExtra)
+library(DT)
+library(sf)
+
+here::i_am("project.Rproj")
+```
+
+# Parameters
+
+
+# stuff
+
+# R session information
+
+```{r Rsession,cache=TRUE,eval=T,echo=T,cache=F,include=T}
+sessioninfo::session_info()
+```
+
+# Bilbiography
